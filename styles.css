@@ -41,6 +41,7 @@ h1, h2, h3, h4 {
   color: var(--navy);
   line-height: 1.25;
   font-weight: 700;
+  text-wrap: balance;
 }
 
 img {
@@ -147,6 +148,7 @@ button, input {
   max-width: 480px;
   margin: 0 auto 32px;
   color: var(--sky);
+  text-wrap: pretty;
 }
 .hero-nav {
   display: flex;
@@ -233,6 +235,7 @@ button, input {
   font-size: 15px;
   margin: 0;
   flex-grow: 1;
+  text-wrap: pretty;
 }
 .bootcamp-card .card-facts {
   font-family: 'Manrope', sans-serif;
@@ -258,6 +261,7 @@ button, input {
   color: var(--sky);
   max-width: 480px;
   margin: 0 auto 32px;
+  text-wrap: pretty;
 }
 
 /* Campaign bar */
@@ -297,6 +301,7 @@ button, input {
 }
 .bootcamp h2 {
   font-size: 28px;
+  line-height: 1.4;
   margin-bottom: 12px;
 }
 .bootcamp .subtitle {
@@ -304,6 +309,8 @@ button, input {
   color: var(--blue);
   font-weight: 600;
   margin-bottom: 28px;
+  max-width: 640px;
+  text-wrap: pretty;
 }
 .bootcamp h3 {
   font-size: 19px;
@@ -313,6 +320,7 @@ button, input {
   margin-top: 0;
 }
 .bootcamp p {
+  max-width: 640px;
   margin-bottom: 12px;
 }
 
@@ -340,6 +348,7 @@ button, input {
   color: var(--text);
   max-width: 640px;
   margin-bottom: 20px;
+  text-wrap: pretty;
 }
 .chip-row {
   display: flex;
