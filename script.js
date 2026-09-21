@@ -39,6 +39,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  var flowSections = document.querySelectorAll('.flow-section');
+  if (flowSections.length) {
+    if ('IntersectionObserver' in window) {
+      var flowObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+      flowSections.forEach(function (el) { flowObserver.observe(el); });
+    } else {
+      flowSections.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  }
+
   var whatsappPattern = /^(\+27|0)[6-8][0-9]{8}$/;
 
   var forms = document.querySelectorAll('.booking-form');

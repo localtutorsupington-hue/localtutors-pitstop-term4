@@ -16,6 +16,7 @@
   --container: 720px;
   --container-wide: 960px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-focal: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -519,20 +520,88 @@ button, input {
   transform: rotate(-45deg);
 }
 
-/* Scroll reveal (generic, keyed by script.js) */
-.reveal-item {
+/* Scroll reveal (generic, keyed by script.js).
+   Gated behind .js (set synchronously in <head>) so content stays
+   visible by default if scripts fail to load or run. */
+.js .reveal-item {
   opacity: 0;
   transform: translateY(8px);
   transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out);
 }
-.reveal-item.is-visible {
+.js .reveal-item.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 @media (prefers-reduced-motion: reduce) {
-  .reveal-item {
+  .js .reveal-item {
     transform: none;
     transition: opacity 200ms ease;
+  }
+}
+
+/* Flow-page motion (gr10-rek-wisk.html): each content block arrives
+   like its own page as it scrolls into view. The intro block gets a
+   single rehearsed cascade on load; everything after it shares one
+   consistent reveal, which is the point, since the brief asked the
+   page itself to feel like a continuous flow rather than one static
+   scroll. The booking form is deliberately excluded so the primary
+   action never waits behind an animation. */
+.js .flow-page .flow-section {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 550ms var(--ease-focal), transform 550ms var(--ease-focal);
+}
+.js .flow-page .flow-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.flow-page .bootcamp h3:first-of-type {
+  margin-top: 32px;
+}
+.flow-page .flow-section--lead h3 {
+  margin-top: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .flow-page .flow-section {
+    transform: none;
+    transition: opacity 250ms ease;
+  }
+}
+
+@keyframes flowIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.js .flow-page .intro-eyebrow,
+.js .flow-page .bootcamp h2,
+.js .flow-page .intro-description,
+.js .flow-page .chip-row {
+  animation: flowIn 600ms var(--ease-focal) both;
+}
+.js .flow-page .intro-eyebrow {
+  animation-delay: 0ms;
+}
+.js .flow-page .bootcamp h2 {
+  animation-delay: 80ms;
+}
+.js .flow-page .intro-description {
+  animation-delay: 160ms;
+}
+.js .flow-page .chip-row {
+  animation-delay: 240ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .flow-page .intro-eyebrow,
+  .js .flow-page .bootcamp h2,
+  .js .flow-page .intro-description,
+  .js .flow-page .chip-row {
+    animation: none;
   }
 }
 
