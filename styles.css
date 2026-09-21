@@ -14,6 +14,7 @@
   --radius-lg: 20px;
   --shadow: 0 8px 24px rgba(11, 31, 51, 0.12);
   --container: 720px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 * {
@@ -416,6 +417,57 @@ button, input {
   border-left: 2px solid var(--white);
   border-bottom: 2px solid var(--white);
   transform: rotate(-45deg);
+}
+
+/* Included grid (icon-led rows) */
+.included-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.included-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out);
+}
+.included-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.included-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--sky);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.included-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--navy);
+}
+.included-item p {
+  margin: 0;
+  font-size: 15px;
+  padding-top: 8px;
+}
+@media (min-width: 640px) {
+  .included-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .included-item {
+    transform: none;
+    transition: opacity 200ms ease;
+  }
 }
 
 /* Tutor block */

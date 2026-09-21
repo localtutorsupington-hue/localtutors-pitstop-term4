@@ -19,6 +19,26 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileCta.classList.add('visible');
   }
 
+  var revealItems = document.querySelectorAll('.included-item');
+  if (revealItems.length) {
+    revealItems.forEach(function (el, i) {
+      el.style.transitionDelay = Math.min(i * 50, 250) + 'ms';
+    });
+    if ('IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealItems.forEach(function (el) { revealObserver.observe(el); });
+    } else {
+      revealItems.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  }
+
   var whatsappPattern = /^(\+27|0)[6-8][0-9]{8}$/;
 
   var forms = document.querySelectorAll('.booking-form');
