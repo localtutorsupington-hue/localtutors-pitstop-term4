@@ -202,14 +202,27 @@ button, input {
   outline-offset: 2px;
 }
 
+/* Campaign bar */
+.campaign-bar {
+  background: var(--sky);
+  text-align: center;
+  padding: 10px 20px;
+}
+.campaign-bar a {
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+.campaign-bar a:hover {
+  text-decoration: underline;
+}
+
 /* Bootcamp sections */
 .bootcamp {
   scroll-margin-top: 76px;
-  padding: 56px 0;
-  border-bottom: 1px solid var(--grey);
-}
-.bootcamp:nth-of-type(even) {
-  background: var(--grey);
+  padding: 40px 0 56px;
 }
 .bootcamp-eyebrow {
   display: inline-block;
@@ -255,15 +268,11 @@ button, input {
 }
 
 .card {
-  background: var(--white);
+  background: var(--grey);
   border: 1px solid #E1E8ED;
   border-radius: var(--radius-lg);
   padding: 24px;
   margin: 20px 0;
-}
-.bootcamp:nth-of-type(odd) .card {
-  background: var(--grey);
-  border-color: #E1E8ED;
 }
 
 /* Day schedule */
@@ -374,13 +383,10 @@ button, input {
   margin: 16px 0;
 }
 .logistics-item {
-  background: var(--white);
+  background: var(--grey);
   border-radius: var(--radius-sm);
   padding: 14px 16px;
   border: 1px solid #E1E8ED;
-}
-.bootcamp:nth-of-type(odd) .logistics-item {
-  background: var(--grey);
 }
 .logistics-item .label {
   font-family: 'Manrope', sans-serif;

@@ -1,30 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var sections = document.querySelectorAll('.bootcamp');
   var hero = document.querySelector('.hero');
+  var bootcamp = document.querySelector('.bootcamp');
   var mobileCta = document.getElementById('mobileCta');
   var mobileCtaLink = document.getElementById('mobileCtaLink');
 
-  function setCtaTarget(sectionId) {
-    if (mobileCtaLink) {
-      mobileCtaLink.setAttribute('href', '#' + sectionId + '-form');
-    }
-  }
-
-  if (sections.length) {
-    setCtaTarget(sections[0].id);
-  }
-
-  if ('IntersectionObserver' in window && sections.length) {
-    var sectionObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          setCtaTarget(entry.target.id);
-        }
-      });
-    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
-    sections.forEach(function (section) {
-      sectionObserver.observe(section);
-    });
+  if (mobileCtaLink && bootcamp) {
+    mobileCtaLink.setAttribute('href', '#' + bootcamp.id + '-form');
   }
 
   if ('IntersectionObserver' in window && hero && mobileCta) {
@@ -34,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0 });
     heroObserver.observe(hero);
-  } else if (mobileCta) {
+  } else if (mobileCta && !hero) {
     mobileCta.classList.add('visible');
   }
 
