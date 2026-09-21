@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileCta.classList.add('visible');
   }
 
-  var revealItems = document.querySelectorAll('.included-item');
+  var revealItems = document.querySelectorAll('.reveal-item');
   if (revealItems.length) {
     revealItems.forEach(function (el, i) {
       el.style.transitionDelay = Math.min(i * 50, 250) + 'ms';

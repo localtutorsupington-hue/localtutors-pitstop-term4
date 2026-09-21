@@ -14,6 +14,7 @@
   --radius-lg: 20px;
   --shadow: 0 8px 24px rgba(11, 31, 51, 0.12);
   --container: 720px;
+  --container-wide: 960px;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -57,6 +58,11 @@ button, input {
 
 .container {
   max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.container-wide {
+  max-width: var(--container-wide);
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -201,6 +207,57 @@ button, input {
 .btn:focus-visible, a:focus-visible, input:focus-visible, button:focus-visible {
   outline: 3px solid var(--sky);
   outline-offset: 2px;
+}
+
+/* Bootcamp preview cards (hub page) */
+.bootcamp-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 48px 0 64px;
+}
+.bootcamp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--grey);
+  border: 1px solid #E1E8ED;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+.bootcamp-card h3 {
+  font-size: 20px;
+  margin: 0;
+}
+.bootcamp-card .card-line {
+  font-size: 15px;
+  margin: 0;
+  flex-grow: 1;
+}
+.bootcamp-card .card-facts {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--blue);
+  margin: 0;
+}
+.bootcamp-card .btn {
+  margin-top: 4px;
+}
+@media (min-width: 900px) {
+  .bootcamp-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Thanks page */
+.thanks-hero {
+  padding: 72px 0;
+}
+.thanks-subline {
+  color: var(--sky);
+  max-width: 480px;
+  margin: 0 auto 32px;
 }
 
 /* Campaign bar */
@@ -419,6 +476,23 @@ button, input {
   transform: rotate(-45deg);
 }
 
+/* Scroll reveal (generic, keyed by script.js) */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out);
+}
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    transform: none;
+    transition: opacity 200ms ease;
+  }
+}
+
 /* Included grid (icon-led rows) */
 .included-grid {
   display: grid;
@@ -430,13 +504,6 @@ button, input {
   display: flex;
   gap: 12px;
   align-items: flex-start;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out);
-}
-.included-item.is-visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 .included-icon {
   flex-shrink: 0;
@@ -461,12 +528,6 @@ button, input {
 @media (min-width: 640px) {
   .included-grid {
     grid-template-columns: 1fr 1fr;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .included-item {
-    transform: none;
-    transition: opacity 200ms ease;
   }
 }
 
