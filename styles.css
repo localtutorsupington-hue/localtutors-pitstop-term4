@@ -807,8 +807,12 @@ button, input {
 .price-card--featured .checklist li::after {
   border-color: var(--navy);
 }
-.price-card--featured .price-guarantee strong {
+.price-card--featured .price-guarantee strong,
+.price-card--featured .price-note strong {
   color: var(--sky);
+}
+.price-card--featured .price-note {
+  border-top-color: rgba(255, 255, 255, 0.18);
 }
 
 @media (min-width: 640px) {
