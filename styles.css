@@ -1,4 +1,4 @@
-/* LocalTutors — Pit Stop: Kwartaal 4
+/* LocalTutors: Pit Stop: Kwartaal 4
    Colours: Deep Navy #0B1F33, Education Blue #2563A6, Sky Blue #8CC8E8,
    White #FFFFFF, Light Grey #F2F5F7, Dark Text #1F2933 */
 
@@ -679,6 +679,35 @@ button, input {
 .tutor-info p {
   margin-bottom: 0;
   font-size: 15px;
+}
+
+/* Proof / result */
+.proof {
+  margin: 16px 0 24px;
+}
+.proof-stat {
+  margin-bottom: 16px;
+}
+.proof-stat strong {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.proof-img {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  border: 1px solid #E1E8ED;
+}
+.proof figcaption {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
 }
 
 /* Logistics grid */
