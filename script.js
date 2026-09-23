@@ -83,6 +83,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.querySelectorAll('.booking-form[data-open-on-cta]').forEach(function (form) {
+    var hash = '#' + form.id;
+    function openForm() {
+      form.classList.add('is-open');
+    }
+    if (window.location.hash === hash) {
+      openForm();
+      form.scrollIntoView();
+    }
+    document.addEventListener('click', function (event) {
+      if (event.target.closest('a[href="' + hash + '"]')) {
+        openForm();
+      }
+    });
+    window.addEventListener('hashchange', function () {
+      if (window.location.hash === hash) {
+        openForm();
+      }
+    });
+  });
+
   var whatsappPattern = /^(\+27|0)[6-8][0-9]{8}$/;
 
   var forms = document.querySelectorAll('.booking-form');

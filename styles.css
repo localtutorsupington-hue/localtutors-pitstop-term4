@@ -920,6 +920,22 @@ button, input {
   color: var(--white);
   margin-top: 0;
 }
+.booking-form .form-intro {
+  color: var(--white);
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+.js .booking-form[data-open-on-cta]:not(.is-open) {
+  display: none;
+}
+.js .booking-form.is-open {
+  animation: flowIn 500ms var(--ease-focal) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .booking-form.is-open {
+    animation: none;
+  }
+}
 .form-group {
   margin-bottom: 16px;
 }
