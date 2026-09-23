@@ -555,10 +555,10 @@ button, input {
   opacity: 1;
   transform: translateY(0);
 }
-.flow-page .bootcamp h3:first-of-type {
+.flow-page .flow-section h3:first-of-type {
   margin-top: 32px;
 }
-.flow-page .flow-section--lead h3 {
+.flow-page .flow-section--lead h3:first-of-type {
   margin-top: 0;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -715,6 +715,163 @@ button, input {
   border-radius: var(--radius-md);
   font-weight: 700;
   margin: 8px 0 24px;
+}
+
+/* Pricing */
+.pricing {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+.price-card {
+  display: grid;
+  gap: 24px;
+  background: var(--white);
+  border: 1px solid #E1E8ED;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+.price-main h4 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+.bootcamp .price-amount {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 12px;
+}
+.bootcamp .price-desc {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.price-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 200ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .price-btn:hover svg {
+    transform: translateX(3px);
+  }
+}
+.bootcamp .price-includes-label {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+.price-includes .checklist {
+  margin: 8px 0 0;
+}
+.price-includes .checklist li {
+  font-size: 15px;
+}
+.bootcamp .price-note {
+  font-size: 14px;
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid #E1E8ED;
+}
+.bootcamp .price-guarantee {
+  font-size: 14px;
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(140, 200, 232, 0.14);
+  border: 1px solid rgba(140, 200, 232, 0.35);
+}
+
+.price-card--featured {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+.price-card--featured h4,
+.price-card--featured .price-amount {
+  color: var(--white);
+}
+.price-card--featured .price-includes-label {
+  color: var(--sky);
+}
+.price-card--featured .checklist li::before {
+  background: var(--sky);
+}
+.price-card--featured .checklist li::after {
+  border-color: var(--navy);
+}
+.price-card--featured .price-guarantee strong {
+  color: var(--sky);
+}
+
+@media (min-width: 640px) {
+  .price-card {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 32px;
+    padding: 28px;
+  }
+}
+
+/* Package choice inside the booking form */
+.package-choice {
+  border: 0;
+  padding: 0;
+  margin: 0 0 16px;
+  min-width: 0;
+}
+.package-choice legend {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.form-group .radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  font-weight: 600;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.radio-option:has(input:checked) {
+  border-color: var(--sky);
+  background: rgba(140, 200, 232, 0.14);
+}
+.form-group .radio-option input {
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: var(--sky);
+}
+.radio-option .radio-price {
+  margin-left: auto;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--sky);
+  font-variant-numeric: tabular-nums;
+}
+.radio-option:has(input:focus-visible) {
+  outline: 3px solid var(--sky);
+  outline-offset: 2px;
+}
+.package-choice.has-error .radio-option {
+  border-color: #FF8A8A;
 }
 
 /* Forms */

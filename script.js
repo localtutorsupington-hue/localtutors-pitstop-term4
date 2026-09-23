@@ -56,6 +56,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  function selectPackage(value) {
+    document.querySelectorAll('input[type="radio"][name="Pakket"]').forEach(function (radio) {
+      if (radio.value === value) {
+        radio.checked = true;
+        var group = radio.closest('.form-group');
+        if (group) {
+          group.classList.remove('has-error');
+        }
+      }
+    });
+  }
+
+  document.querySelectorAll('[data-pakket]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      selectPackage(button.getAttribute('data-pakket'));
+    });
+  });
+
+  document.querySelectorAll('[data-required-group] input[type="radio"]').forEach(function (radio) {
+    radio.addEventListener('change', function () {
+      var group = radio.closest('.form-group');
+      if (group) {
+        group.classList.remove('has-error');
+      }
+    });
+  });
+
   var whatsappPattern = /^(\+27|0)[6-8][0-9]{8}$/;
 
   var forms = document.querySelectorAll('.booking-form');
@@ -63,6 +90,19 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       var isValid = true;
       var firstInvalidField = null;
+
+      form.querySelectorAll('[data-required-group]').forEach(function (group) {
+        if (group.querySelector('input:checked')) {
+          group.classList.remove('has-error');
+        } else {
+          group.classList.add('has-error');
+          isValid = false;
+          if (!firstInvalidField) {
+            firstInvalidField = group.querySelector('input');
+          }
+        }
+      });
+
       var fields = form.querySelectorAll('[data-required]');
 
       fields.forEach(function (field) {
