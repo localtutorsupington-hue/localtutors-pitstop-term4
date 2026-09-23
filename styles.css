@@ -1053,3 +1053,117 @@ button, input {
     font-size: 32px;
   }
 }
+
+/* Value stack (GR10 Slegs Bootcamp) */
+.bootcamp .price-was {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.price-was s {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+}
+.value-tag {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--blue);
+}
+.value-why {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+.value-sum {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  border: 1px solid #E1E8ED;
+  font-size: 15px;
+}
+.value-sum div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+}
+.value-sum dd {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.value-sum-total {
+  margin-top: 6px;
+  padding-top: 10px !important;
+  border-top: 1px solid #E1E8ED;
+}
+.value-sum-total dd s {
+  text-decoration-thickness: 2px;
+}
+.value-sum-pay {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--navy);
+}
+.bootcamp .value-save {
+  margin: 10px 0 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+/* Guarantee block (GR10) */
+.flow-page .guarantee-block {
+  margin-top: 32px;
+  padding: 28px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--blue);
+  color: var(--white);
+}
+.flow-page .guarantee-block h3:first-of-type {
+  margin-top: 0;
+  color: var(--white);
+}
+.guarantee-icon {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.guarantee-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.bootcamp .guarantee-stat {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.bootcamp .guarantee-text {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+.bootcamp .guarantee-small {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 0;
+}
+@media (min-width: 640px) {
+  .flow-page .guarantee-block {
+    padding: 32px;
+  }
+  .bootcamp .guarantee-stat {
+    font-size: 40px;
+  }
+}
