@@ -367,6 +367,10 @@ button, input {
   border-radius: 999px;
   white-space: nowrap;
 }
+.chip--price {
+  background: var(--navy);
+  color: var(--white);
+}
 
 .plain-list {
   list-style: none;
