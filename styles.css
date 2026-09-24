@@ -746,7 +746,7 @@ button, input {
   margin: 8px 0 24px;
 }
 
-/* Pricing */
+/* Pricing: dark shell with a white inset panel */
 .pricing {
   display: grid;
   gap: 16px;
@@ -754,29 +754,90 @@ button, input {
 }
 .price-card {
   display: grid;
-  gap: 24px;
+  gap: 8px;
+  padding: 8px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 24px 48px -24px rgba(11, 31, 51, 0.45);
+}
+.price-main {
+  display: flex;
+  flex-direction: column;
   background: var(--white);
-  border: 1px solid #E1E8ED;
-  border-radius: var(--radius-lg);
-  padding: 24px;
+  color: var(--text);
+  border-radius: 16px;
+  padding: 22px 20px 20px;
+}
+.price-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 .price-main h4 {
   font-size: 17px;
-  margin-bottom: 8px;
+  margin: 0;
+}
+.price-badge {
+  flex-shrink: 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--sky);
+  color: var(--navy);
+}
+.bootcamp .price-was {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.price-was s {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+}
+.price-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin-bottom: 12px;
 }
 .bootcamp .price-amount {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
-  font-size: 40px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -0.045em;
   color: var(--navy);
   font-variant-numeric: tabular-nums;
-  margin-bottom: 12px;
+  margin: 0;
+}
+.price-currency {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0.45em;
+  line-height: 1;
+  letter-spacing: 0;
+  margin: 0.14em 0.08em 0 0;
+}
+.price-per {
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.7;
+  padding-bottom: 8px;
 }
 .bootcamp .price-desc {
   font-size: 15px;
   margin-bottom: 20px;
+}
+.price-btn {
+  width: 100%;
+  border-radius: 999px;
 }
 .price-btn svg {
   width: 18px;
@@ -788,67 +849,165 @@ button, input {
     transform: translateX(3px);
   }
 }
+.bootcamp .price-foot {
+  font-size: 14px;
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid #E1E8ED;
+}
+.price-includes {
+  padding: 16px 14px 14px;
+}
 .bootcamp .price-includes-label {
   font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--blue);
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: 4px;
 }
 .price-includes .checklist {
-  margin: 8px 0 0;
+  margin: 12px 0 0;
 }
 .price-includes .checklist li {
   font-size: 15px;
+  padding-left: 28px;
+  margin-bottom: 12px;
+}
+.price-includes .checklist li::before {
+  top: 11px;
+  left: 2px;
+  width: 13px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--sky);
+}
+.price-includes .checklist li::after {
+  top: 5.5px;
+  left: 7.5px;
+  width: 2px;
+  height: 13px;
+  border: 0;
+  border-radius: 1px;
+  background: var(--sky);
+  transform: none;
+}
+.value-tag {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--sky);
+}
+.value-why {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 2px;
+}
+.price-divider {
+  position: relative;
+  height: 1px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.14);
+}
+.price-divider::before,
+.price-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--sky);
+  border-radius: 1px;
+  transform: translate(-50%, -50%);
+}
+.price-divider::before {
+  width: 20px;
+  height: 20px;
+  background: var(--navy);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+}
+.price-divider::after {
+  width: 8px;
+  height: 8px;
+  background:
+    linear-gradient(var(--sky), var(--sky)) center / 8px 1.5px no-repeat,
+    linear-gradient(var(--sky), var(--sky)) center / 1.5px 8px no-repeat;
+}
+.value-sum {
+  margin: 0;
+  font-size: 15px;
+}
+.value-sum div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+}
+.value-sum dt {
+  color: rgba(255, 255, 255, 0.75);
+}
+.value-sum dd {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.value-sum-total {
+  margin-top: 6px;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.value-sum-total dd s {
+  text-decoration-thickness: 2px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.value-sum-pay {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+}
+.value-sum .value-sum-pay dt {
+  color: var(--white);
+}
+.bootcamp .value-save {
+  margin: 8px 0 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--sky);
 }
 .bootcamp .price-note {
   font-size: 14px;
-  margin: 12px 0 0;
-  padding-top: 12px;
-  border-top: 1px solid #E1E8ED;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 16px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.bootcamp .price-note strong {
+  color: var(--sky);
 }
 .bootcamp .price-guarantee {
   font-size: 14px;
   margin: 16px 0 0;
   padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  background: rgba(140, 200, 232, 0.14);
-  border: 1px solid rgba(140, 200, 232, 0.35);
+  border-radius: 12px;
+  background: rgba(140, 200, 232, 0.1);
+  border: 1px solid rgba(140, 200, 232, 0.3);
 }
-
-.price-card--featured {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: var(--white);
-}
-.price-card--featured h4,
-.price-card--featured .price-amount {
-  color: var(--white);
-}
-.price-card--featured .price-includes-label {
+.price-guarantee strong {
   color: var(--sky);
-}
-.price-card--featured .checklist li::before {
-  background: var(--sky);
-}
-.price-card--featured .checklist li::after {
-  border-color: var(--navy);
-}
-.price-card--featured .price-guarantee strong,
-.price-card--featured .price-note strong {
-  color: var(--sky);
-}
-.price-card--featured .price-note {
-  border-top-color: rgba(255, 255, 255, 0.18);
 }
 
 @media (min-width: 640px) {
   .price-card {
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-    gap: 32px;
-    padding: 28px;
+  }
+  .price-main {
+    padding: 28px 24px 24px;
+  }
+  .price-main {
+    position: sticky;
+    top: 84px;
+    align-self: start;
+  }
+  .price-includes {
+    padding: 24px 22px 20px 16px;
   }
 }
 
@@ -1054,67 +1213,6 @@ button, input {
   }
 }
 
-/* Value stack (GR10 Slegs Bootcamp) */
-.bootcamp .price-was {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 0;
-}
-.price-was s {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  text-decoration-thickness: 2px;
-}
-.value-tag {
-  display: inline-block;
-  font-weight: 700;
-  color: var(--blue);
-}
-.value-why {
-  display: block;
-  font-size: 14px;
-  opacity: 0.8;
-  margin-top: 2px;
-}
-.value-sum {
-  margin: 16px 0 0;
-  padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--white);
-  border: 1px solid #E1E8ED;
-  font-size: 15px;
-}
-.value-sum div {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 4px 0;
-}
-.value-sum dd {
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.value-sum-total {
-  margin-top: 6px;
-  padding-top: 10px !important;
-  border-top: 1px solid #E1E8ED;
-}
-.value-sum-total dd s {
-  text-decoration-thickness: 2px;
-}
-.value-sum-pay {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  color: var(--navy);
-}
-.bootcamp .value-save {
-  margin: 10px 0 0;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  color: var(--blue);
-}
-
 /* Guarantee block (GR10) */
 .flow-page .guarantee-block {
   margin-top: 32px;
@@ -1165,5 +1263,16 @@ button, input {
   }
   .bootcamp .guarantee-stat {
     font-size: 40px;
+  }
+}
+.bootcamp .price-note--plain {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+@media (min-width: 1100px) {
+  .pricing-section {
+    margin-left: -120px;
+    margin-right: -120px;
   }
 }
