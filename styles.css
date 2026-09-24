@@ -1530,3 +1530,70 @@ button, input {
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   }
 }
+
+/* Phone reading sizes: one step up across the board below 640px.
+   Prefixed with body so each rule outranks the base rule it resizes. */
+@media (max-width: 639px) {
+  body {
+    font-size: 18px;
+  }
+  /* Headings */
+  body .bootcamp h3,
+  body .booking-form h3 {
+    font-size: 22px;
+  }
+  body .tutor-info h4,
+  body .price-main h4 {
+    font-size: 19px;
+  }
+  body .bootcamp .fit-title {
+    font-size: 30px;
+  }
+  body .hero p.hero-line {
+    font-size: 20px;
+  }
+  /* Main reading text that was set below the body size */
+  body .intro-description,
+  body .faq-item summary,
+  body .faq-item p,
+  body .fit-list li {
+    font-size: 19px;
+  }
+  body .bootcamp-card .card-line,
+  body .btn,
+  body .bootcamp-card .btn,
+  body .booking-form .btn,
+  body .bootcamp .fit-close,
+  body .tutor-info p,
+  body .bootcamp .price-desc,
+  body .price-includes .checklist li,
+  body .included-item p,
+  body .value-card .value-sum {
+    font-size: 18px;
+  }
+  /* Secondary text: notes, labels, fine print */
+  body .bootcamp .price-per,
+  body .bootcamp .price-foot,
+  body .bootcamp .price-includes-label,
+  body .value-why,
+  body .bootcamp .price-guarantee,
+  body .bootcamp .price-note,
+  body .bootcamp .guarantee-small,
+  body .form-group label,
+  body .form-note,
+  body .proof figcaption,
+  body .price-was,
+  body .campaign-bar a {
+    font-size: 16px;
+  }
+  body .bootcamp-card .card-facts,
+  body .chip,
+  body .price-badge,
+  body .price-save,
+  body .logistics-item .label,
+  body .form-group .error-msg,
+  body .bootcamp-eyebrow,
+  body .day-num {
+    font-size: 15px;
+  }
+}
