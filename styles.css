@@ -520,52 +520,38 @@ button, input {
   transform: rotate(-45deg);
 }
 
-/* Scroll reveal (generic, keyed by script.js).
-   Gated behind .js (set synchronously in <head>) so content stays
-   visible by default if scripts fail to load or run. */
-.js .reveal-item {
+/* Scroll reveal: content arrives in small chunks, each sliding up out
+   of a soft blur, staggered when several enter together. script.js
+   picks the chunks and adds .stagger; it is removed again once the
+   element has arrived so the element's own transitions return.
+   Gated behind .js so content stays visible if scripts fail. */
+.js .stagger {
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 300ms var(--ease-out), transform 300ms var(--ease-out);
+  transform: translateY(18px);
+  filter: blur(6px);
+  transition:
+    opacity 700ms var(--ease-focal),
+    transform 700ms var(--ease-focal),
+    filter 700ms var(--ease-focal);
 }
-.js .reveal-item.is-visible {
+.js .stagger.is-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
+  filter: none;
 }
 @media (prefers-reduced-motion: reduce) {
-  .js .reveal-item {
+  .js .stagger {
     transform: none;
-    transition: opacity 200ms ease;
+    filter: none;
+    transition: opacity 250ms ease;
   }
 }
 
-/* Flow-page motion (gr10-rek-wisk.html): each content block arrives
-   like its own page as it scrolls into view. The intro block gets a
-   single rehearsed cascade on load; everything after it shares one
-   consistent reveal, which is the point, since the brief asked the
-   page itself to feel like a continuous flow rather than one static
-   scroll. The booking form is deliberately excluded so the primary
-   action never waits behind an animation. */
-.js .flow-page .flow-section {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 550ms var(--ease-focal), transform 550ms var(--ease-focal);
-}
-.js .flow-page .flow-section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 .flow-page .flow-section h3:first-of-type {
   margin-top: 32px;
 }
 .flow-page .flow-section--lead h3:first-of-type {
   margin-top: 0;
-}
-@media (prefers-reduced-motion: reduce) {
-  .js .flow-page .flow-section {
-    transform: none;
-    transition: opacity 250ms ease;
-  }
 }
 
 @keyframes flowIn {
