@@ -780,46 +780,42 @@ button, input {
   background: var(--sky);
   color: var(--navy);
 }
-.bootcamp .price-was {
-  font-size: 15px;
+.price-was {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
 }
 .price-was s {
+  text-decoration-thickness: 1.5px;
+}
+.price-save {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  text-decoration-thickness: 2px;
-}
-.price-row {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 4px 10px;
-  margin-bottom: 12px;
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(37, 99, 166, 0.1);
+  color: var(--blue);
 }
 .bootcamp .price-amount {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
-  font-size: 60px;
+  font-size: 56px;
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
   color: var(--navy);
   font-variant-numeric: tabular-nums;
-  margin: 0;
+  margin: 0 0 8px;
 }
-.price-currency {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 0.45em;
-  line-height: 1;
-  letter-spacing: 0;
-  margin: 0.14em 0.08em 0 0;
-}
-.price-per {
-  font-size: 15px;
+.bootcamp .price-per {
+  font-size: 14px;
   font-weight: 600;
-  opacity: 0.7;
-  padding-bottom: 8px;
+  color: rgba(31, 41, 51, 0.7);
+  margin: 0 0 16px;
 }
 .bootcamp .price-desc {
   font-size: 15px;
@@ -922,9 +918,24 @@ button, input {
     linear-gradient(var(--sky), var(--sky)) center / 8px 1.5px no-repeat,
     linear-gradient(var(--sky), var(--sky)) center / 1.5px 8px no-repeat;
 }
+.price-value {
+  padding: 4px 14px 14px;
+}
+.price-value .price-includes-label {
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
 .value-sum {
-  margin: 0;
+  margin: 8px 0 0;
   font-size: 15px;
+}
+.value-sum .value-sum-save {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--sky);
+}
+.value-sum .value-sum-save dt {
+  color: var(--sky);
 }
 .value-sum div {
   display: flex;
@@ -956,12 +967,6 @@ button, input {
 .value-sum .value-sum-pay dt {
   color: var(--white);
 }
-.bootcamp .value-save {
-  margin: 8px 0 0;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 700;
-  color: var(--sky);
-}
 .bootcamp .price-note {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
@@ -991,10 +996,21 @@ button, input {
   .price-main {
     padding: 28px 24px 24px;
   }
-  .price-main {
-    position: sticky;
-    top: 84px;
-    align-self: start;
+  .price-card--value {
+    grid-template-areas:
+      "main includes"
+      "value includes";
+    align-items: start;
+  }
+  .price-card--value .price-main { grid-area: main; }
+  .price-card--value .price-includes { grid-area: includes; }
+  .price-card--value .price-value {
+    grid-area: value;
+    padding: 8px 16px 16px;
+  }
+  .price-card--value .price-value .price-includes-label {
+    border-top: 0;
+    padding-top: 12px;
   }
   .price-includes {
     padding: 24px 22px 20px 16px;
@@ -1265,4 +1281,36 @@ button, input {
     margin-left: -120px;
     margin-right: -120px;
   }
+}
+
+/* Extra item under the day list (GR10: study-skills workshop) */
+.day-extra {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 4px 0 20px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--grey);
+}
+.day-extra-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sky);
+  color: var(--navy);
+}
+.day-extra-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.bootcamp .day-extra p {
+  margin: 0;
+}
+.day-extra strong {
+  color: var(--navy);
 }

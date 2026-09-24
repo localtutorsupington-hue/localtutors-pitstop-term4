@@ -2,7 +2,7 @@
   var chunks = [
     '.bootcamp-card', '.bootcamp h3', '.bootcamp p', '.bootcamp li',
     '.lang-note', '.logistics-item', '.faq-item', '.card', '.pricing',
-    '.included-item', '.guarantee-block', '.quick-facts'
+    '.included-item', '.guarantee-block', '.quick-facts', '.day-extra'
   ].join(', ');
   var skip = '.booking-form, .intro-description, .intro-eyebrow, .chip-row, .site-header, .site-footer';
 
