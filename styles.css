@@ -1276,3 +1276,206 @@ button, input {
     margin-right: -120px;
   }
 }
+
+/* Full-screen "page" panel (GR10: Is dit vir jou kind?) */
+::selection {
+  background: var(--sky);
+  color: var(--navy);
+}
+.page-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 64px);
+  margin: 40px 0 0;
+  padding: 72px 0 28px;
+  background: var(--navy);
+  color: var(--white);
+  /* Full-bleed background without widening the layout */
+  box-shadow: 0 0 0 100vmax var(--navy);
+  clip-path: inset(0 -100vmax);
+}
+.page-panel-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bootcamp .page-title {
+  font-size: clamp(44px, 11vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0 0 20px;
+  max-width: 11ch;
+  text-wrap: balance;
+}
+.bootcamp .page-lead {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: clamp(18px, 2.4vw, 22px);
+  color: var(--sky);
+  margin: 0 0 20px;
+}
+.page-signs {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.page-sign {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 3.4vw, 30px);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+.page-sign-icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  margin-top: 0.05em;
+  color: var(--sky);
+}
+.page-sign-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.bootcamp .page-close {
+  max-width: 34em;
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+.page-close strong {
+  color: var(--white);
+}
+.page-next {
+  align-self: center;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 48px;
+  padding: 8px 12px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color 200ms var(--ease-out);
+}
+.page-next svg {
+  width: 22px;
+  height: 22px;
+  color: var(--sky);
+  animation: pageNudge 2.4s var(--ease-out) infinite;
+}
+@media (hover: hover) and (pointer: fine) {
+  .page-next:hover {
+    color: var(--white);
+  }
+}
+@keyframes pageNudge {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(5px); }
+}
+#waar-dit-skeef-loop {
+  /* header height + the 28px the section slides up as it reveals */
+  scroll-margin-top: 108px;
+}
+.flow-page .page-panel + .flow-section--lead h3:first-of-type {
+  margin-top: 56px;
+}
+
+/* The authored moment: signs arrive one after another */
+.js .page-sign {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(6px);
+  transition:
+    opacity 700ms var(--ease-focal),
+    transform 700ms var(--ease-focal),
+    filter 700ms var(--ease-focal);
+}
+.js .page-sign.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+.js .page-sign .page-sign-icon svg path {
+  stroke-dasharray: 14;
+  stroke-dashoffset: 14;
+  transition: stroke-dashoffset 500ms var(--ease-out) 350ms;
+}
+.js .page-sign.is-visible .page-sign-icon svg path {
+  stroke-dashoffset: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .page-sign {
+    transform: none;
+    filter: none;
+    transition: opacity 250ms ease;
+  }
+  .js .page-sign .page-sign-icon svg path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  .page-next svg {
+    animation: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .page-panel {
+    padding-top: 96px;
+  }
+  .page-sign {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 20px;
+    padding: 26px 0;
+  }
+  .page-sign-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media (min-width: 1100px) {
+  .page-panel {
+    margin-left: -120px;
+    margin-right: -120px;
+    padding-top: 80px;
+  }
+  .page-panel-body {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: 64px;
+    align-content: center;
+    align-items: start;
+  }
+  .page-panel-head {
+    position: sticky;
+    top: 120px;
+  }
+  .bootcamp .page-title {
+    font-size: clamp(64px, 6.4vw, 92px);
+  }
+  .page-sign {
+    font-size: 26px;
+    padding: 22px 0;
+  }
+  .page-next {
+    margin-top: 32px;
+  }
+}

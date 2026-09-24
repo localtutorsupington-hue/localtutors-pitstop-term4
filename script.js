@@ -56,6 +56,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  var pageSigns = document.querySelectorAll('.page-sign');
+  if (pageSigns.length) {
+    if ('IntersectionObserver' in window) {
+      var signObserver = new IntersectionObserver(function (entries, obs) {
+        var batch = 0;
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = (batch * 110) + 'ms';
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+            batch++;
+          }
+        });
+      }, { threshold: 0.5, rootMargin: '0px 0px -8% 0px' });
+      pageSigns.forEach(function (el) { signObserver.observe(el); });
+    } else {
+      pageSigns.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  }
+
   function selectPackage(value) {
     document.querySelectorAll('input[type="radio"][name="Pakket"]').forEach(function (radio) {
       if (radio.value === value) {
