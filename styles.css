@@ -38,6 +38,7 @@ html {
 
 body {
   font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
   color: var(--text);
   background: var(--white);
   line-height: 1.6;
@@ -130,7 +131,7 @@ button, input {
   justify-content: center;
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   flex-shrink: 0;
 }
 .header-name {
@@ -248,7 +249,7 @@ button, input {
   margin: 0;
 }
 .bootcamp-card .card-line {
-  font-size: 15px;
+  font-size: 16px;
   margin: 0;
   flex-grow: 1;
   text-wrap: pretty;
@@ -256,7 +257,7 @@ button, input {
 .bootcamp-card .card-facts {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--blue);
   margin: 0;
 }
@@ -290,7 +291,7 @@ button, input {
   color: var(--navy);
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   text-decoration: none;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -310,7 +311,7 @@ button, input {
   color: var(--navy);
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   padding: 5px 12px;
@@ -346,7 +347,7 @@ button, input {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
   color: var(--navy);
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 28px;
 }
 
@@ -355,7 +356,7 @@ button, input {
   display: block;
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--blue);
@@ -379,7 +380,7 @@ button, input {
   color: var(--navy);
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   padding: 6px 14px;
   border-radius: 999px;
   white-space: nowrap;
@@ -424,7 +425,7 @@ button, input {
 }
 .quote cite {
   font-style: normal;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text);
 }
 
@@ -503,7 +504,7 @@ button, input {
   justify-content: center;
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
 }
 .day-list strong {
   color: var(--navy);
@@ -641,7 +642,7 @@ button, input {
 }
 .included-item p {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   padding-top: 8px;
 }
 @media (min-width: 640px) {
@@ -685,7 +686,7 @@ button, input {
 }
 .tutor-info p {
   margin-bottom: 0;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* Proof / result */
@@ -712,7 +713,7 @@ button, input {
   border: 1px solid #E1E8ED;
 }
 .proof figcaption {
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
   margin-top: 12px;
 }
@@ -733,7 +734,7 @@ button, input {
 .logistics-item .label {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--blue);
@@ -791,7 +792,7 @@ button, input {
   flex-shrink: 0;
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   padding: 5px 12px;
   border-radius: 999px;
   background: var(--sky);
@@ -802,7 +803,7 @@ button, input {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 10px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -812,7 +813,7 @@ button, input {
 .price-save {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   padding: 3px 10px;
   border-radius: 999px;
   background: rgba(37, 99, 166, 0.1);
@@ -829,13 +830,13 @@ button, input {
   margin: 0 0 8px;
 }
 .bootcamp .price-per {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: rgba(31, 41, 51, 0.7);
   margin: 0 0 16px;
 }
 .bootcamp .price-desc {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 .price-btn {
@@ -853,7 +854,7 @@ button, input {
   }
 }
 .bootcamp .price-foot {
-  font-size: 14px;
+  font-size: 15px;
   margin: 16px 0 0;
   padding-top: 14px;
   border-top: 1px solid #E1E8ED;
@@ -864,7 +865,7 @@ button, input {
 .bootcamp .price-includes-label {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.65);
   margin-bottom: 4px;
 }
@@ -872,7 +873,7 @@ button, input {
   margin: 12px 0 0;
 }
 .price-includes .checklist li {
-  font-size: 15px;
+  font-size: 16px;
   padding-left: 28px;
   margin-bottom: 12px;
 }
@@ -901,7 +902,7 @@ button, input {
 }
 .value-why {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.62);
   margin-top: 2px;
 }
@@ -944,7 +945,7 @@ button, input {
 }
 .value-sum {
   margin: 8px 0 0;
-  font-size: 15px;
+  font-size: 16px;
 }
 .value-sum .value-sum-save {
   font-family: 'Manrope', sans-serif;
@@ -985,7 +986,7 @@ button, input {
   color: var(--white);
 }
 .bootcamp .price-note {
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.75);
   margin: 16px 0 0;
   padding-top: 14px;
@@ -995,7 +996,7 @@ button, input {
   color: var(--sky);
 }
 .bootcamp .price-guarantee {
-  font-size: 14px;
+  font-size: 15px;
   margin: 16px 0 0;
   padding: 14px 16px;
   border-radius: 12px;
@@ -1043,7 +1044,7 @@ button, input {
 }
 .package-choice legend {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 6px;
 }
 .form-group .radio-option {
@@ -1124,7 +1125,7 @@ button, input {
 .form-group label {
   display: block;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 6px;
 }
 .form-group input {
@@ -1144,7 +1145,7 @@ button, input {
 .form-group .error-msg {
   display: none;
   color: #FFD1D1;
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 6px;
 }
 .form-group.has-error input {
@@ -1165,7 +1166,7 @@ button, input {
   margin-top: 8px;
 }
 .form-note {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--sky);
   margin-top: 14px;
   margin-bottom: 0;
@@ -1276,7 +1277,7 @@ button, input {
   margin-bottom: 12px;
 }
 .bootcamp .guarantee-small {
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0.85;
   margin-bottom: 0;
 }
@@ -1428,4 +1429,104 @@ button, input {
 }
 .day-list li > div {
   min-width: 0;
+}
+
+/* "Wat dit werd is" (GR10): a white receipt inset in the navy shell,
+   concentric with the price panel, so the value maths gets read */
+.price-value {
+  padding: 0 0 14px;
+}
+.price-card--value .price-value {
+  padding: 0 0 16px;
+}
+.price-value .price-guarantee,
+.price-value .price-note {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+.value-card {
+  background: var(--white);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 20px 18px 18px;
+}
+.value-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+.value-card .value-sum {
+  margin: 0;
+  font-size: 17px;
+}
+.value-card .value-sum div {
+  padding: 9px 0;
+  border-bottom: 1px dashed #D3DCE3;
+}
+.value-card .value-sum dt {
+  color: var(--text);
+}
+.value-card .value-sum dd {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--navy);
+}
+.value-card .value-sum .value-sum-total {
+  margin-top: 4px;
+  padding-top: 12px !important;
+  border-top: 0;
+  border-bottom: 0;
+}
+.value-card .value-sum-total dt,
+.value-card .value-sum-total dd s {
+  color: rgba(31, 41, 51, 0.65);
+}
+.value-card .value-sum .value-sum-pay {
+  border-bottom: 0;
+  padding-top: 2px;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+.value-card .value-sum .value-sum-pay dt,
+.value-card .value-sum .value-sum-pay dd {
+  color: var(--navy);
+  font-weight: 800;
+}
+.value-card .value-sum .value-sum-save {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--sky);
+  font-size: 19px;
+}
+.value-card .value-sum .value-sum-save dt,
+.value-card .value-sum .value-sum-save dd {
+  color: var(--navy);
+  font-weight: 800;
+}
+@media (min-width: 640px) {
+  .value-card {
+    padding: 24px 24px 22px;
+  }
+  .price-value .price-guarantee,
+  .price-value .price-note {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.price-card {
+  grid-template-columns: minmax(0, 1fr);
+}
+.price-head h4,
+.value-sum dt {
+  min-width: 0;
+}
+@media (min-width: 640px) {
+  .price-card {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  }
 }
