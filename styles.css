@@ -27,6 +27,13 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+.btn, .faq-item summary, .page-next {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -182,30 +189,38 @@ button, input {
   background: var(--white);
   color: var(--navy);
 }
-.btn-primary:hover {
-  box-shadow: var(--shadow);
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    box-shadow: var(--shadow);
+  }
 }
 .btn-solid {
   background: var(--blue);
   color: var(--white);
 }
-.btn-solid:hover {
-  background: #1e5088;
+@media (hover: hover) and (pointer: fine) {
+  .btn-solid:hover {
+    background: #1e5088;
+  }
 }
 .btn-outline {
   background: transparent;
   border-color: var(--white);
   color: var(--white);
 }
-.btn-outline:hover {
-  background: rgba(255,255,255,0.12);
+@media (hover: hover) and (pointer: fine) {
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.12);
+  }
 }
 .btn-whatsapp {
   background: #25D366;
   color: var(--white);
 }
-.btn-whatsapp:hover {
-  background: #1fb856;
+@media (hover: hover) and (pointer: fine) {
+  .btn-whatsapp:hover {
+    background: #1fb856;
+  }
 }
 .btn:focus-visible, a:focus-visible, input:focus-visible, button:focus-visible {
   outline: 3px solid var(--sky);
@@ -278,8 +293,10 @@ button, input {
   font-size: 14px;
   text-decoration: none;
 }
-.campaign-bar a:hover {
-  text-decoration: underline;
+@media (hover: hover) and (pointer: fine) {
+  .campaign-bar a:hover {
+    text-decoration: underline;
+  }
 }
 
 /* Bootcamp sections */
@@ -1286,10 +1303,10 @@ button, input {
 /* Extra item under the day list (GR10: study-skills workshop) */
 .day-extra {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   align-items: flex-start;
-  margin: 4px 0 20px;
-  padding: 16px;
+  margin: 12px 0 0;
+  padding: 14px;
   border-radius: var(--radius-md);
   background: var(--grey);
 }
@@ -1313,4 +1330,102 @@ button, input {
 }
 .day-extra strong {
   color: var(--navy);
+}
+
+/* "Is dit vir jou kind?" (GR10): the section parents should not skim past */
+.fit-check {
+  margin: 8px 0 8px;
+  padding: 26px 20px 22px;
+  border-radius: var(--radius-lg);
+  background: var(--grey);
+  border: 1px solid #E1E8ED;
+}
+.bootcamp .fit-title {
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+.bootcamp .fit-lead {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--blue);
+  margin: 0 0 14px;
+}
+.fit-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+.fit-list li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 14px 0;
+  border-top: 1px solid #DCE4EA;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--navy);
+  text-wrap: pretty;
+}
+.fit-list li:first-child {
+  border-top: 0;
+  padding-top: 4px;
+}
+.fit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-top: -1px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+}
+.fit-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.bootcamp .fit-close {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid #DCE4EA;
+  font-size: 16px;
+}
+.fit-close strong {
+  color: var(--navy);
+}
+.flow-page .fit-check + .flow-section h3:first-of-type {
+  margin-top: 40px;
+}
+@media (min-width: 640px) {
+  .fit-check {
+    padding: 36px 36px 30px;
+  }
+  .bootcamp .fit-title {
+    font-size: 34px;
+  }
+  .bootcamp .fit-lead {
+    font-size: 18px;
+  }
+  .fit-list li {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 16px;
+    font-size: 20px;
+    padding: 16px 0;
+  }
+  .fit-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+.day-list li > div {
+  min-width: 0;
 }
