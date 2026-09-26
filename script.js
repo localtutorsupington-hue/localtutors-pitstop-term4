@@ -4,7 +4,7 @@
     '.lang-note', '.logistics-item', '.faq-item', '.card', '.pricing',
     '.included-item', '.guarantee-block', '.quick-facts', '.day-extra', '.countdown'
   ].join(', ');
-  var skip = '.booking-form, .intro-description, .intro-eyebrow, .chip-row, .site-header, .site-footer';
+  var skip = '.booking-form, .closed-note, .intro-description, .intro-eyebrow, .chip-row, .site-header, .site-footer';
 
   var targets = Array.prototype.filter.call(document.querySelectorAll(chunks), function (el) {
     if (el.closest(skip)) {
@@ -194,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var mode = el.getAttribute('data-countdown');
 
     if (left <= 0) {
+      closeBookings();
       if (mode === 'full') {
         el.classList.add('is-closed');
         el.querySelector('.countdown-label').textContent = 'Inskrywings het gesluit';
@@ -215,9 +216,22 @@ document.addEventListener('DOMContentLoaded', function () {
       el.innerHTML = 'Sluit oor <strong class="countdown-inline">' +
         (p.d ? p.d + (p.d === 1 ? ' dag ' : ' dae ') : '') +
         pad(p.h) + ':' + pad(p.m) + ':' + pad(p.s) +
-        '</strong>, Sondag om middernag.';
+        '</strong>, vanaand om middernag.';
     }
     return true;
+  }
+
+  /* At the deadline: hide the countdown, the form and every booking
+     button, and show the closed note with a WhatsApp link instead. */
+  function closeBookings() {
+    if (document.body.classList.contains('booking-closed')) {
+      return;
+    }
+    document.body.classList.add('booking-closed');
+    var note = document.querySelector('.closed-note');
+    if (note) {
+      note.hidden = false;
+    }
   }
 
   timers.forEach(function (el) {

@@ -1677,3 +1677,31 @@ button, input {
     font-size: 17px;
   }
 }
+
+/* After the booking deadline (body.booking-closed, set by script.js) */
+.booking-closed .countdown,
+.booking-closed .booking-form,
+.booking-closed .form-lead,
+.booking-closed .spots-left,
+.booking-closed .price-btn,
+.booking-closed .mobile-cta {
+  display: none !important;
+}
+.closed-note {
+  margin: 24px 0 8px;
+  padding: 24px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--navy);
+  color: var(--white);
+}
+.closed-note[hidden] {
+  display: none;
+}
+.bootcamp .closed-note h3 {
+  margin: 0 0 8px;
+  color: var(--white);
+}
+.bootcamp .closed-note p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+}
