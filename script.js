@@ -2,7 +2,7 @@
   var chunks = [
     '.bootcamp-card', '.bootcamp h3', '.bootcamp p', '.bootcamp li',
     '.lang-note', '.logistics-item', '.faq-item', '.card', '.pricing',
-    '.included-item', '.guarantee-block', '.quick-facts', '.day-extra'
+    '.included-item', '.guarantee-block', '.quick-facts', '.day-extra', '.countdown'
   ].join(', ');
   var skip = '.booking-form, .intro-description, .intro-eyebrow, .chip-row, .site-header, .site-footer';
 
@@ -164,3 +164,78 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+/* Countdown to the booking deadline. The static sentence in the HTML is the
+   no-JS fallback and stays for screen readers; the ticking digits are
+   visual only (aria-hidden) so nothing is announced every second. */
+(function () {
+  var timers = document.querySelectorAll('[data-countdown]');
+  if (!timers.length) {
+    return;
+  }
+
+  function pad(n) {
+    return n < 10 ? '0' + n : String(n);
+  }
+
+  function parts(ms) {
+    var total = Math.max(0, Math.floor(ms / 1000));
+    return {
+      d: Math.floor(total / 86400),
+      h: Math.floor((total % 86400) / 3600),
+      m: Math.floor((total % 3600) / 60),
+      s: total % 60
+    };
+  }
+
+  function render(el, deadline) {
+    var left = deadline - Date.now();
+    var p = parts(left);
+    var mode = el.getAttribute('data-countdown');
+
+    if (left <= 0) {
+      if (mode === 'full') {
+        el.classList.add('is-closed');
+        el.querySelector('.countdown-label').textContent = 'Inskrywings het gesluit';
+        el.querySelector('.countdown-units').hidden = true;
+        el.querySelector('.countdown-note').textContent = 'WhatsApp ons om te hoor of daar nog plek is.';
+      } else {
+        el.textContent = 'Inskrywings het gesluit. WhatsApp ons om te hoor of daar nog plek is.';
+      }
+      return false;
+    }
+
+    if (mode === 'full') {
+      el.querySelector('[data-unit="d"]').textContent = p.d;
+      el.querySelector('[data-label="d"]').textContent = p.d === 1 ? 'dag' : 'dae';
+      el.querySelector('[data-unit="h"]').textContent = pad(p.h);
+      el.querySelector('[data-unit="m"]').textContent = pad(p.m);
+      el.querySelector('[data-unit="s"]').textContent = pad(p.s);
+    } else {
+      el.innerHTML = 'Sluit oor <strong class="countdown-inline">' +
+        (p.d ? p.d + (p.d === 1 ? ' dag ' : ' dae ') : '') +
+        pad(p.h) + ':' + pad(p.m) + ':' + pad(p.s) +
+        '</strong>, Sondag om middernag.';
+    }
+    return true;
+  }
+
+  timers.forEach(function (el) {
+    var deadline = Date.parse(el.getAttribute('data-deadline'));
+    if (isNaN(deadline)) {
+      return;
+    }
+    var units = el.querySelector('.countdown-units');
+    if (units) {
+      units.hidden = false;
+    }
+    if (!render(el, deadline)) {
+      return;
+    }
+    var id = setInterval(function () {
+      if (!render(el, deadline)) {
+        clearInterval(id);
+      }
+    }, 1000);
+  });
+})();

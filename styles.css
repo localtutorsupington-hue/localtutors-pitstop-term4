@@ -1597,3 +1597,83 @@ button, input {
     font-size: 15px;
   }
 }
+
+/* Booking countdown (GR10) */
+.countdown {
+  margin: 4px 0 28px;
+  padding: 18px 18px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--navy);
+  color: var(--white);
+}
+.bootcamp .countdown-label {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--sky);
+  margin: 0 0 10px;
+}
+.countdown-units {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.countdown-units[hidden] {
+  display: none;
+}
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 4px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.countdown-unit b {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-unit small {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+}
+.bootcamp .countdown-note {
+  margin: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.countdown-note strong {
+  color: var(--white);
+}
+.countdown.is-closed .countdown-label {
+  color: var(--white);
+}
+.countdown-inline {
+  font-variant-numeric: tabular-nums;
+  color: var(--navy);
+}
+@media (min-width: 640px) {
+  .countdown {
+    padding: 22px 24px 20px;
+  }
+  .countdown-units {
+    max-width: 440px;
+  }
+  .countdown-unit b {
+    font-size: 36px;
+  }
+}
+@media (max-width: 639px) {
+  body .bootcamp .countdown-label {
+    font-size: 16px;
+  }
+  body .bootcamp .countdown-note {
+    font-size: 17px;
+  }
+}
