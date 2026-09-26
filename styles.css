@@ -1705,3 +1705,20 @@ button, input {
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 16px;
 }
+
+.countdown-btn {
+  width: 100%;
+  margin-top: 14px;
+  border-radius: 999px;
+}
+@media (min-width: 640px) {
+  .countdown-btn {
+    width: auto;
+  }
+}
+.countdown.no-days .countdown-unit:first-child {
+  display: none;
+}
+.countdown.no-days .countdown-units {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}

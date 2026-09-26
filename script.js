@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (mode === 'full') {
+      el.classList.toggle('no-days', p.d === 0);
       el.querySelector('[data-unit="d"]').textContent = p.d;
       el.querySelector('[data-label="d"]').textContent = p.d === 1 ? 'dag' : 'dae';
       el.querySelector('[data-unit="h"]').textContent = pad(p.h);
