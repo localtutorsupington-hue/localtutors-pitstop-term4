@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
       el.innerHTML = 'Sluit oor <strong class="countdown-inline">' +
         (p.d ? p.d + (p.d === 1 ? ' dag ' : ' dae ') : '') +
         pad(p.h) + ':' + pad(p.m) + ':' + pad(p.s) +
-        '</strong>, vanaand om middernag.';
+        '</strong> (om 00:00 op Sondag 27 September).';
     }
     return true;
   }
